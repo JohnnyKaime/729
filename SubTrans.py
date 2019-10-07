@@ -1,4 +1,18 @@
-#Cyber security 
+#COS792 Assignment 1
+#Task 1
+#References: https://www.geeksforgeeks.org/columnar-transposition-cipher/
+#
+#Ask user for options to encrypt or decrypt
+#	Uses a random generated key for Substitution cipher
+#	Ask user for key used in Transpositional cipher
+#	Based on the Substituted cipher
+#	Futher encrypt message using Transpositional cipher with key
+#
+#	Ask user for encrypted message and key used in Transpositional cipher
+#	First reverse the Transpositional cipher using key
+#	Then use the decrypted message and futher decrypt
+#	Using Substitution cipher
+
 import math
 import random
 #Generates random key using alphabet list
@@ -37,81 +51,85 @@ def decryptSubs(key,msg,characterSets):
 def encryptTrans(key,msg): 
 	#Create cipher variable
     cipher = "" 
-    #
+    #K index use for tracking 
     k_indx = 0
-
+    #Msg variable data
     msg_len = float(len(msg)) 
     msg_lst = list(msg) 
+    #Convert key into list and use built in function to sort list
     key_lst = sorted(list(key)) 
-  
-    # calculate column of the matrix 
+  	#Length of col equals length of the key
     col = len(key) 
-      
-    # calculate maximum row of the matrix 
-    row = int(math.ceil(msg_len / col)) 
-  
-    # add the padding character '_' in empty 
-    # the empty cell of the matix  
+    #Use ceiling function to ensure enough rows
+    #Message length divided key length to find how much rows
+    row = int(math.ceil(msg_len / col))
+    #Fill empty gaps with padding space
+    #Or none alphabetically character, wild cards etc
+    #"_"
     fill_null = int((row * col) - msg_len) 
     msg_lst.extend('_' * fill_null) 
-  
-    # create Matrix and insert message and  
-    # padding characters row-wise  
+    #Create matrix or 2D array  
+    #Fill the message in the corresponding columns
+    #From 0 to the last element of message
+    #We jump every column
+    #Assign that element into the index position + col no.
     matrix = [msg_lst[i: i + col]for i in range(0, len(msg_lst), col)] 
-  
-    # read matrix column-wise using key 
+	#For each column 
     for _ in range(col): 
+    	#Current get the element at k_index from each colunn
+    	#Because we increment row column each iteration
         curr_idx = key.index(key_lst[k_indx]) 
+        #Use list comprehension to join each row into String
         cipher += ''.join([row[curr_idx] for row in matrix]) 
         k_indx += 1
   
     return cipher 
 
-def decryptTrans(key,cipher): 
+def decryptTrans(key,cipher):
+	#Create msg variable
     msg = "" 
-  
-    # track key indices 
+    #K index use for tracking 
     k_indx = 0
-  
-    # track msg indices 
+	#Cipher text variable data
     msg_indx = 0
     msg_len = float(len(cipher)) 
+    #Convert msg into list
     msg_lst = list(cipher) 
-  
-    # calculate column of the matrix 
+	#Length of col equals length of the key
     col = len(key) 
-      
-    # calculate maximum row of the matrix 
+    #Use ceiling function to ensure enough rows
+    #Cipher length divided key length to find how much rows
     row = int(math.ceil(msg_len / col)) 
-  
-    # convert key into list and sort  
-    # alphabetically so we can access  
-    # each character by its alphabetical position. 
+    #Convert key into list and use built in functions to sort
     key_lst = sorted(list(key)) 
-  
-    # create an empty matrix to  
-    # store deciphered message 
+    #Create matrix
     dec_cipher = [] 
-    for _ in range(row): 
+    for _ in range(row):
+    	#Create row and add to matrix
         dec_cipher += [[None] * col] 
   
-    # Arrange the matrix column wise according  
-    # to permutation order by adding into new matrix 
+    #Arrange the matrix in column wise
+	#For each column
     for _ in range(col): 
         curr_idx = key.index(key_lst[k_indx]) 
-  
+  		#For each row
         for j in range(row): 
+        	#We add the message into the matrix
             dec_cipher[j][curr_idx] = msg_lst[msg_indx] 
+            #Increment index use in row
             msg_indx += 1
+           #Increment index to keep track of column
         k_indx += 1
   
-    # convert decrypted msg matrix into a string 
-    msg = ''.join(sum(dec_cipher, [])) 
+    #Use list comprehension to join each row into String
+    msg = ''.join(sum(dec_cipher, []))
+    #Check if theres empty paddings 
+    #Used as spaces or wild cards etc
     null_count = msg.count('_') 
-  
+  	#If theres empty padding
     if null_count > 0: 
+    	#Remove the amount of empty paddings from the back of the original message
         return msg[: -null_count] 
-  
     return msg 
 
 #List of digits, alphabet and wildcard characters I will be using
@@ -120,8 +138,7 @@ characterSets = 'abcdefghijklmnopqrstuvwxyz.,! @#$%^&*()_-+=1234567890/|`~'
 #Must be same length as list of alphabets
 #You maybe use randomKey to generate new key
 key = '^lfvyc3th|!+qs/0u&dg`*,7mn61r98 5w.#=a@z(-opje)bk2x%~_i$4'
-#Text to be encrypted
-#Get from user
+#Sample
 #plaintext = "Ishtar, Ereshkigal and Yu Miaoyi are Bae!"
 options = input("Choose from the following:\n1.Encrypt\n2.Decrypt\n")
 if(options == "1"):
