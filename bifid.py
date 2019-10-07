@@ -1,3 +1,5 @@
+#COS792 Assignment 1
+#Task 2
 import random
 #This is a scam but I cant find a way to code real TRNG
 #It still follows the principals of  polybius cipher
