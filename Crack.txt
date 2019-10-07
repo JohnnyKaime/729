@@ -1,0 +1,163 @@
+#COS792 Assignment 1
+#Task 3
+#Reference: https://en.wikipedia.org/wiki/Letter_frequency
+############################################################
+D LJELKOKJKOUV COSIYM OL IDMRYM KU CMDCZ KIDV D
+CDYLDM COSIYM EJK GY CDV LKOXX JLY PMYQJYVCB
+DVDXBLOL KU POVR KIY WULK CUWWUV XYKKYML.
+O SMUWOLYR BUJ KIDK O GUJXR JLY DXX KGYVKB LOF
+XYKKYML LU KIDK WYDVL KIDK O IDHY TUK KU DRR YFKMD
+GUMRL LJCI DL NYXXB DVR AUU.
+
+############################################################
+1. Since not much alphabet letter by it self can be
+used alone, D was could be A or I similiarly to O 
+should be the other letter.
+############################################################
+After Intial guess:
+	A B C D E F G H I J K L M
+	D               O
+
+	N O P Q R S T U V W X Y Z
+
+a LJELKiKJKiUV CiSIYM iL IaMRYM KU CMaCZ KIaV a
+CaYLaM CiSIYM EJK GY CaV LKiXX JLY PMYQJYVCB
+aVaXBLiL KU PiVR KIY WULK CUWWUV XYKKYML.
+i SMUWiLYR BUJ KIaK i GUJXR JLY aXX KGYVKB LiF
+XYKKYML LU KIaK WYaVL KIaK i IaHY TUK KU aRR YFKMa
+GUMRL LJCI aL NYXXB aVR AUU.  
+############################################################
+2. Using frequency analysis the most appearing
+letters were:
+K   25
+D   20
+Y   20
+L   19
+U   15
+
+The less were:
+F   2
+Z   1
+Q   1
+H   1
+T   1
+N   1 
+A   1 
+
+Then judging from AUU, there isnt must 3 letter words
+with a repeating letter, hence I guessed "Bee,egg,too
+zoo", then I went with "zoo"
+############################################################
+After 2nd guess:
+	A B C D E F G H I J K L M
+	D               O
+
+	N O P Q R S T U V W X Y Z
+	  U                     A
+
+a LJELKiKJKioV CiSIYM iL IaMRYM Ko CMaCZ KIaV a
+CaYLaM CiSIYM EJK GY CaV LKiXX JLY PMYQJYVCB
+aVaXBLiL Ko PiVR KIY WoLK CoWWoV XYKKYML.
+i SMoWiLYR BoJ KIaK i GoJXR JLY aXX KGYVKB LiF
+XYKKYML Lo KIaK WYaVL KIaK i IaHY ToK Ko aRR YFKMa
+GoMRL LJCI aL NYXXB aVR zoo. 
+############################################################
+3. "D LJELKOKJKOUV COSIYM OL" in this phase I got
+O = I and L is right next to O, creating OL there
+arent many 2 letter words starting with I's hence
+"ID, IF, IN, IS, IT" are the only ones and judging
+from the frequency and appearance of the letter L in
+"LJELKOKJKOUV" I guessed that word is "SUBSTITUTION"
+which makes sense, because we did that as Task 1...
+############################################################
+After 3nd guess:
+	A B C D E F G H I J K L M
+	D E             O     
+
+	N O P Q R S T U V W X Y Z
+	V U       L K J         A
+
+a substitution CiSIYM is IaMRYM to CMaCZ tIan a
+CaYsaM CiSIYM but GY Can stiXX usY PMYQuYnCB
+anaXBsis to PinR tIY Wost CoWWon XYttYMs.
+i SMoWisYR Bou tIat i GouXR usY aXX tGYntB siF
+XYttYMs so tIat WYans tIat i IaHY Tot to aRR YFtMa
+GoMRs suCI as NYXXB anR zoo.
+############################################################
+4. "tIan" I think thats I is a H ...
+"Can" this word confirms that C is unchanged and is C
+"usY" Y should be E for the word "use"
+"siF" F should be X for the word "six"
+"suCI" is "such" from the above
+"anR" R should be D for the word "and"
+############################################################
+After 4th guess:
+	A B C D E F G H I J K L M
+	D E C R Y     I O     
+
+	N O P Q R S T U V W X Y Z
+	V U       L K J     F   A
+
+a substitution ciSheM is haMdeM to cMacZ than a
+caesaM ciSheM but Ge can stiXX use PMeQuencB
+anaXBsis to Pind the Wost coWWon XetteMs.
+i SMoWised Bou that i GouXd use aXX tGentB six
+XetteMs so that Weans that i haHe Tot to add extMa
+GoMds such as NeXXB and zoo.
+############################################################
+5. Given the hint the first few letters makes up a 
+word which I can see would be "DECRYPTION"
+############################################################
+After 5th guess:
+	A B C D E F G H I J K L M
+	D E C R Y P T I O N   
+
+	N O P Q R S T U V W X Y Z
+	V U       L K J     F   A
+
+a substitution ciSheM is haMdeM to cMacZ than a
+caesaM ciSheM but Ge can stiXX use fMeQuencB
+anaXBsis to find the Wost coWWon XetteMs.
+i SMoWised Bou that i GouXd use aXX tGentB six
+XetteMs so that Weans that i haHe got to add extMa
+GoMds such as jeXXB and zoo.
+############################################################
+6. "caesaM" M sould be R for the word "Caesar"
+"ciSheM" S should be P for the word "cipher"
+"stiXX" X should be L for the word "still"
+"haHe" H should be V for the word "have"
+"Weans" W should be M for the word "means"
+############################################################
+After 6th guess:
+	A B C D E F G H I J K L M
+	D E C R Y P T I O N   X W
+
+	N O P Q R S T U V W X Y Z
+	V U S   M L K J H   F   A
+
+a substitution cipher is harder to cracZ than a
+caesar cipher but Ge can still use freQuencB
+analBsis to find the most common letters.
+i promised Bou that i Gould use all tGentB six
+letters so that means that i have got to add extra
+Gords such as jellB and zoo.
+############################################################
+7. "cracZ" Z should be K for the word "crack"
+"analBsis" B should be Y for the word "analysis"
+"Gords" G should be W for the word "words"
+"freQuencB" Q should stay the same for the word "frequency"
+############################################################
+After 7th guess:
+	A B C D E F G H I J K L M
+	D E C R Y P T I O N Z X W
+
+	N O P Q R S T U V W X Y Z
+	V U S Q M L K J H G F B A
+
+a substitution cipher is harder to crack than a
+caesar cipher but we can still use frequency
+analysis to find the most common letters.
+i promised you that i would use all twenty six
+letters so that means that i have got to add extra
+words such as jelly and zoo.
+############################################################
